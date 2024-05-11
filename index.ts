@@ -22,10 +22,7 @@ const answers = await inquirer.prompt([
         choices: [1000, 2000, 10000, 20000],
         message: "Select your transaction amount: ",
 }
-//     when(answers){
-//         return answers.accountType
-//     },
-// }
+
 ])
 
 console.log(answers)
