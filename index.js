@@ -1,20 +1,18 @@
+#! /usr/bin/env node
 import inquirer from 'inquirer';
+const systemGeneratednumber = Math.floor(Math.random() * 10);
 const answers = await inquirer.prompt([
     {
-        type: "input",
-        name: "userID",
-        message: "Kindly Enter your Id: "
-    },
-    {
         type: "number",
-        name: "userPin",
-        message: "kindly enter your PIN: "
-    },
-    {
-        type: "list",
-        name: "transactionType",
-        choices: ["fast Cash", "withdraw"],
-        message: "Select your transaction"
+        name: "userGuess",
+        message: "write your guess between 1 to 10: "
     }
 ]);
-console.log(answers);
+const { userGuess } = answers;
+console.log("userGuess", userGuess, 'SYs', systemGeneratednumber);
+if (userGuess === systemGeneratednumber) {
+    console.log("yeah your answeris correct \n you win!");
+}
+else {
+    console.log("please try again better luck next time!");
+}

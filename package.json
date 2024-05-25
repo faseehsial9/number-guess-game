@@ -3,10 +3,11 @@
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.12.7"
   },
-  "name": "simple-calculator",
-  "version": "1.0.0",
+  "name": "number-guess-gamefaseeh",
+  "version": "1.0.2",
   "main": "index.js",
   "type": "module",
+  "bin": "index.js",
   "dependencies": {
     "inquirer": "^9.2.20",
     "undici-types": "^5.26.5"

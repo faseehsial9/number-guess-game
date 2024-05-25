@@ -1,28 +1,25 @@
+#! /usr/bin/env node
 import inquirer from 'inquirer';
 
-interface anstype{
-    userID: string;
-    userPin: number;
+type ansType={
+    userGuess: number;
 }
 
-const answers = await inquirer.prompt([
-    {
-        type: "input",
-        name: "userID",
-        message: "Kindly Enter your Id: "
-    },
+const systemGeneratednumber=Math.floor(Math.random()*10);
+
+const answers: ansType= await inquirer.prompt([
     {
         type: "number",
-        name: "userPin",
-        message: "kindly enter your PIN: "
-    },
-    {
-        type: "list",
-        name: "transactionType",
-        choices: [1000, 2000, 10000, 20000],
-        message: "Select your transaction amount: ",
+        name: "userGuess",
+        message: "write your guess between 1 to 10: "
+    }
+])
+const {userGuess}=answers;
+
+console.log("userGuess", userGuess, 'SYs', systemGeneratednumber)
+if(userGuess === systemGeneratednumber){
+    console.log("yeah your answeris correct \n you win!")
+}else{
+    console.log("please try again better luck next time!")
 }
 
-])
-
-console.log(answers)
