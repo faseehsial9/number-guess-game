@@ -14,6 +14,7 @@ const answers: ansType= await inquirer.prompt([
         message: "write your guess between 1 to 10: "
     }
 ])
+
 const {userGuess}=answers;
 
 console.log("userGuess", userGuess, 'SYs', systemGeneratednumber)
